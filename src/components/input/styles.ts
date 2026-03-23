@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Colors } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
     input: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
         height: 52,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: '#121214',
+        borderColor: Colors.txtPrimary,
         padding: 12,
         fontSize: 16,
     }

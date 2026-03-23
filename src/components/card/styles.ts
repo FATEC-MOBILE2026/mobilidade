@@ -1,20 +1,28 @@
-import {StyleSheet} from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
+import { Colors } from '@/constants/colors';
 
 export const styles = StyleSheet.create({
   card: {
-    // width: '40%',      
-    // aspectRatio: 1.90,
-
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.white,
     borderRadius: 12,
-    padding: 16,
+    padding: 24,
     gap: 16,
 
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-
     elevation: 4, 
+
+    ...Platform.select({
+      web: {
+        width: 450,       
+        alignSelf: 'center', 
+        maxWidth: '90%', 
+      },
+      default: {
+        width: '100%',    
+      }
+    })
   },
 });
