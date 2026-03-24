@@ -1,16 +1,17 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
 
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from '@/components/button';
 
+import { useAuth } from '../../context/AuthContext';
+
 export default function Dashboard() {
-     const { username } = useLocalSearchParams<{ username: string }>();
+    const { user, signOut } = useAuth(); 
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Bem-vindo, {username}</Text>
-            <Button title="Voltar" onPress={() => router.back()} />
+            <Text style={styles.title}>Bem-vindo, {user}</Text>
+            <Button title="Sair do App" onPress={signOut} />
         </View>
     )
 }
