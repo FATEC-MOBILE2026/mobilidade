@@ -25,17 +25,19 @@ export default function Index() {
     function validateCredentials() {
         if(name === 'Ronaldo' && senha === '123') {
             
-            // router.push({
-            //     pathname: '/dashboard',
-            //     params: { username: name } 
-            // });
-
-            setAlertData({
-                title: 'Bem-vindo!',
-                message: 'Login realizado com sucesso.',
-                type: 'success'
+            router.push({
+                pathname: '/dashboard',
+                params: { username: name } 
             });
-            setIsAlertVisible(true);
+
+            // setAlertData({
+            //     title: 'Bem-vindo!',
+            //     message: 'Login realizado com sucesso.',
+            //     type: 'success'
+            // });
+            // setIsAlertVisible(true);
+
+
         } else {
             setAlertData({
                 title: 'Erro de Acesso',
