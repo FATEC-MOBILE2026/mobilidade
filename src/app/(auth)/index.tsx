@@ -1,10 +1,10 @@
-import { use, useState } from 'react';
+import { useState } from 'react';
 import { router } from 'expo-router';
 import { useAuth } from '../../context/AuthContext';
 
 import Logo from '@assets/images/cat-icon.svg';
 
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import { Button } from '@/components/button';
 import { Input } from '@/components/input';
@@ -46,9 +46,6 @@ export default function Index() {
         <View style={styles.container}>
             <Card>
                 <Icon name={Logo} size={200} />
-                {/* <Text style={styles.title}>
-                    Bem vindo ao APP Fatec
-                </Text> */}
                 <Input 
                     placeholder="Usuario" 
                     onChangeText={setName} />
