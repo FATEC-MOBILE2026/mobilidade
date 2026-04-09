@@ -1,15 +1,25 @@
+import { useState } from 'react';
+import { router } from 'expo-router';
 
 import { View, Text, StyleSheet } from 'react-native';
 
-import Button from '../components/button';
+import Button from '@/components/button';
 
 export default function Index() {
+
+    function irAoDashboard() {
+        router.push({
+            pathname: '/dashboard',
+            params: { name : 'João'}
+        });
+    }
+
     return (
         <View>
             <Text style={styles.title}>Hello World.</Text>
             <Button 
-                title="Alterar"
-                onPress={() => alert('Clicou no botão')}
+                title="Ir ao Dashboard"
+                onPress={irAoDashboard}
                 style={{ marginTop: 40 }}/>
         </View>
     );
