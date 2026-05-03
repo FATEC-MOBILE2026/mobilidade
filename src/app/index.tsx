@@ -1,11 +1,14 @@
 import { use, useState } from 'react';
 import { router } from 'expo-router';
 
+import Logo from '@assets/images/cat-icon.svg';
+
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from '@/components/button';
 import { Input } from '@/components/input';
 import { Card } from '@/components/card';
 import { Alert } from '@/components/alert';   
+import { Icon } from '@/components/icon';
 
 export default function Index() {
     const [name, setName] = useState<string>('');
@@ -31,18 +34,20 @@ export default function Index() {
             setAlertData({
                 title: 'Erro de Login',
                 message: 'Credenciais inválidas. Tente novamente.',
-                type: 'warning',
+                type: 'error',
             });
             setIsAlertVisible(true);
+
         }
     }
 
     return (
         <View style={styles.container}>
             <Card>
-                <Text style={styles.title}>
+                <Icon name={Logo} size={200} />
+                {/* <Text style={styles.title}>
                     Bem vindo ao APP Fatec
-                </Text>
+                </Text> */}
                 <Input 
                     placeholder="Usuario" 
                     onChangeText={setName} />

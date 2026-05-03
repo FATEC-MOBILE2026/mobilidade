@@ -1,4 +1,4 @@
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Alert as RNAlert } from "react-native";
 import { AlertProps } from "./types";
 
