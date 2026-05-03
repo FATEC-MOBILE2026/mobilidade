@@ -1,5 +1,6 @@
 import { use, useState } from 'react';
 import { router } from 'expo-router';
+import { useAuth } from '@/context/AuthContext';
 
 import Logo from '@assets/images/cat-icon.svg';
 
@@ -21,23 +22,23 @@ export default function Index() {
         type: 'success' as 'success' | 'error' | 'warning' | 'info',
     });
 
+    const { signIn } = useAuth();
 
     function validateCredentials() {
         if(name === 'kleber' && senha === '123') {
+            signIn(name);
+
             router.push({
                 pathname: '/dashboard',
                 params: { username: name } 
             });
         } else {
-            // alert('Credenciais inválidas. Tente novamente.');
-
             setAlertData({
                 title: 'Erro de Login',
                 message: 'Credenciais inválidas. Tente novamente.',
                 type: 'error',
             });
             setIsAlertVisible(true);
-
         }
     }
 
@@ -45,9 +46,6 @@ export default function Index() {
         <View style={styles.container}>
             <Card>
                 <Icon name={Logo} size={200} />
-                {/* <Text style={styles.title}>
-                    Bem vindo ao APP Fatec
-                </Text> */}
                 <Input 
                     placeholder="Usuario" 
                     onChangeText={setName} />
