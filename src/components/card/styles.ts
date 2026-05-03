@@ -2,9 +2,6 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
-    // width: '40%',      
-    // aspectRatio: 1.90,
-
     backgroundColor: '#FFF',
     borderRadius: 12,
     padding: 16,
